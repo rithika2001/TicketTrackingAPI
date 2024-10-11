@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace TicketTrackingAPI.Controllers
-{
+{ 
+    // Defines the RepliesController class, which is a controller for handling
+    // HTTP requests related to ticket replies
     [Route("api/[controller]")]
     [ApiController]
     public class RepliesController : ControllerBase
@@ -17,17 +19,23 @@ namespace TicketTrackingAPI.Controllers
         {
             _context = context;
         }
-
+        // GET ALL
+        // method to handle GET requests and return a list of all ticket replies
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TicketReply>>> GetReplies()
         {
             return await _context.TicketReplies.ToListAsync();
         }
 
+        // GET (1)
+        // method to handle GET requests for a specific ticket reply based on its ID
         [HttpGet("{ReplyId}")]
         public async Task<ActionResult<TicketReply>> GetTicketReplies(int ReplyId)
         {
+            // find a ticket reply by its ID
             var ticketReplies = await _context.TicketReplies.FindAsync(ReplyId);
+            
+            // If the ticket reply is not found, return a 404 Not Found response
             if (ticketReplies == null)
             {
                 return NotFound();
@@ -35,7 +43,8 @@ namespace TicketTrackingAPI.Controllers
             return ticketReplies;
         }
 
-        // New POST method
+        // POST method
+        // method to handle POST requests for creating a new ticket reply
         [HttpPost]
         public async Task<ActionResult<TicketReply>> PostTicketReply(TicketReply ticketReply)
         {

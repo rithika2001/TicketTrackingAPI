@@ -9,6 +9,7 @@
     }
   },
   "profiles": {
+    // Profile configurations for running the application in different environments and settings
     "http": {
       "commandName": "Project",
       "dotnetRunMessages": true,

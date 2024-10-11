@@ -6,7 +6,7 @@ using TicketTrackingAPI.Models; // For Ticket model
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 
-
+// Create a new WebApplication builder instance
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container

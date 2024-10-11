@@ -3,6 +3,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TicketTrackingAPI.Models
 {
+    // Define the TicketReply class
+    // to represent a reply associated with a ticket in the ticket tracking system
     public class TicketReply
     {
         [Key]

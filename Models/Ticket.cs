@@ -2,6 +2,7 @@ using System;
 
 namespace TicketTrackingAPI.Models
 {
+    // Define the Ticket class to represent a ticket in the ticket tracking system
     public class Ticket
     {
         public long Id { get; set; }
